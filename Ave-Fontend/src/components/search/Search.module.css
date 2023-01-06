@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav {
+  background-color: rgb(24, 24, 24);
+  height: 70px;
+  color: white;
+}
+
+.nav__container {
+  display: flex;
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 100%;
+}
+
+.nav__logo {
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.search {
+  background: #F9FBFC;
+  border-radius: 15px;
+  margin: 0 24px;
+  height: 40px;
+  width: 50%;
+  font-size: 24px;
+  text-align: center;
+  font-family: 'Poppins';
+  font-weight: 400;
+  color: #1E1E1F;
+  border: none;
+  outline: none;
+}
+
+.search::placeholder {
+  color: #A5A5A5;
+  font-family: 'Poppins';
+  font-weight: 400;
+}
+
+.search:focus {
+  outline-color: none;
+}
+
+
+.nav__label, .nav__input {
+  display: none;
+}
+
+.nav__menu {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2em;
+}
+
+.nav__item {
+  color: white;
+}
+
+.sort {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem auto;
+}
+
+.sort__title {
+  margin-right: 1rem;
+  font-size: 1rem;
+  line-height: 40px;
+}
+
+.sort__select {
+  padding: .5rem 1rem;
+  border-radius: 15px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(255, 0, 0);
+}
+
+.sort__select_price {
+  margin-left: 1rem;
+  padding-left: .5rem;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(255, 0, 0);
+}
+
+ /*------------ CARDS ----------- */
+
+.card__container {
+  width: 80%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  margin: .5rem 0;
+  height: 190px;
+  width: 290px;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  object-fit: contain;
+}
+
+.icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+}
+
+.icon:hover {
+  background: url('../../assets/heart-active.svg')
+}
+
+.icon_active {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+  background: url('../../assets/heart-active.svg');
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  bottom: 0px;
+  padding: 0 5px;
+  border-radius: 0 0 15px 15px;
+  width: 100%;
+  height: 45%;
+  font-family: 'Segoe UI',sans-serif;
+  background-color: rgba(53, 53, 53, 0.384);
+}
+
+.title {
+  font-size: .9em;
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 4px rgb(31, 31, 31);
+}
+
+.price {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: rgb(228, 227, 227);
+  text-shadow: 0px 1px 1px rgb(0, 0, 0);
+}
+
+@media (max-width: 1330px) {
+  .card__container {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media (max-width: 1024px) {
+  .card {
+    width: 266px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .card__container {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .card {
+    width: 320px;
+  }
+
+}
+
+@media (max-width: 426px) {
+
+  .nav__label {
+    display: block;
+    cursor: pointer;
+  }
+  .nav__menu {
+    width: 50%;
+    padding-top: 2rem;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 70px;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(138, 38, 38);
+    clip-path: circle(0 at right);
+    transition: clip-path .8s ease-in-out;
+  }
+
+  .nav__item{
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .nav__input:checked + .nav__menu {
+    clip-path: circle(100% at center);
+  }
+
+  .sort {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sort__select{
+    width: 100%;
+  }
+
+  .sort__select_price {
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 0px;
+    padding: .5rem;
+    cursor: pointer;
+  }
+
+  .card__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+@media (max-width: 376px) {
+  .sort {
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem auto;
+    width: 300px;
+  }
+
+  .card {
+    width: 300px;
+  }
+}
+
