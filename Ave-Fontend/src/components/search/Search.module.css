@@ -50,8 +50,8 @@
   outline-color: none;
 }
 
-
-.nav__label, .nav__input {
+.nav__label,
+.nav__input {
   display: none;
 }
 
@@ -101,7 +101,7 @@
   background-color: rgb(255, 0, 0);
 }
 
- /*------------ CARDS ----------- */
+/*------------ CARDS ----------- */
 
 .card__container {
   width: 80%;
@@ -159,7 +159,7 @@
   border-radius: 0 0 15px 15px;
   width: 100%;
   height: 45%;
-  font-family: 'Segoe UI',sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: rgba(53, 53, 53, 0.384);
 }
 
@@ -208,6 +208,7 @@
     display: block;
     cursor: pointer;
   }
+
   .nav__menu {
     width: 50%;
     padding-top: 2rem;
@@ -224,12 +225,12 @@
     transition: clip-path .8s ease-in-out;
   }
 
-  .nav__item{
+  .nav__item {
     display: flex;
     align-items: flex-start;
   }
 
-  .nav__input:checked + .nav__menu {
+  .nav__input:checked+.nav__menu {
     clip-path: circle(100% at center);
   }
 
@@ -238,7 +239,7 @@
     align-items: center;
   }
 
-  .sort__select{
+  .sort__select {
     width: 100%;
   }
 
@@ -270,4 +271,3 @@
     width: 300px;
   }
 }
-
